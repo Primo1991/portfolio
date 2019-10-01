@@ -1,0 +1,36 @@
+{
+  "name": "mynewfreshweb",
+  "version": "1.0.0",
+  "description": "Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "keywords": [
+    "Programer",
+    "Web",
+    "Development",
+    "Website",
+    "SEO",
+    "website",
+    "marketing",
+    "website",
+    "development",
+    "how",
+    "to",
+    "build",
+    "website",
+    "junior",
+    "front",
+    "developer",
+    "frontend",
+    "developer",
+    "full-stack",
+    "linux"
+  ],
+  "author": "Przemyslaw Chmiel",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
