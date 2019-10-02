@@ -1,5 +1,6 @@
 @import 'config';
 @import 'menu';
+@import 'responsivnes';
 
 * {
     box-sizing: border-box;
@@ -9,7 +10,7 @@ body {
 
     @include linear-gradient($primary-color, $second-color);
     @include background;
-    color: #d4d7dd;
+    color: set-text-color($primary-color);
     margin: 0;
     height: 100vh;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -27,8 +28,8 @@ h3 {
         letter-spacing: 4px;
         font-size: 7em;
         @include text3d(adjust-color($primary-shadow-color, $lightness: -12%),
-            $depth: 8,
-            $primaryshadowcolour: adjust-color($primary, $lightness: -20%, $saturation: +20%));
+            $depth: 5,
+            $primaryshadowcolour: adjust-color($primary, $lightness: -20%, $saturation: -30%));
     }
 
     &.sm-heading {
@@ -37,8 +38,8 @@ h3 {
         font-size: 4em;
         padding: 0.2rem 0rem;
         @include text3d(adjust-color($primary-shadow-color, $lightness: -12%),
-            $depth: 6,
-            $primaryshadowcolour: adjust-color($primary, $lightness: -20%, $saturation: +10%));
+            $depth: 2,
+            $primaryshadowcolour: adjust-color($primary, $lightness: -20%, $saturation: -30%));
 
     }
 }
@@ -63,12 +64,12 @@ main {
         max-height: 10vh;
         height: 10vh;
         display: flex;
-        justify-content: flex-end;
         position: absolute;
         bottom: 0px;
         right: 0px;
+        left: 0px;
         @include linear-gradient(#f45c43, #eb3349);
-        width: 100%;
+        width: 100vw;
         box-shadow: -12px 10px black;
 
 
@@ -85,7 +86,7 @@ main {
 
             &:hover {
                 @include text3d(adjust-color($primary-shadow-color, $lightness: -22%),
-                    $depth: 5,
+                    $depth: 2,
                     $primaryshadowcolour: adjust-color(#fff, $lightness: -30%, $saturation: +0%));
                 transform: scale(1.2);
             }
@@ -117,4 +118,74 @@ main {
     background-color: #000;
     z-index: -2;
     filter: blur(5px);
+}
+
+//About Page 
+main {
+    font-family: $font-about-page;
+    padding: 50px 150px;
+
+    .lg-about {
+        font-size: 2.8rem;
+        margin-top: -50px;
+    }
+
+    .sm-about {
+        font-size: 1rem;
+        margin-bottom: 50px;
+    }
+}
+
+
+
+.about-info {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas:
+        'bioimage bio bio'
+        'bioimage skill skill'
+        'job1 job2 job3';
+    grid-template-columns: repeat(3, 1fr);
+
+    .bio-image {
+        grid-area: bioimage;
+        margin: auto;
+        border-radius: 50%;
+        border: $second-color;
+        height: 250px;
+        width: 250px;
+        background-position: right -2px top -55px;
+        border: 3px solid $second-color;
+    }
+
+    .bio {
+        grid-area: bio;
+        font-size: 1rem;
+    }
+
+    .job-1 {
+        grid-area: job1;
+    }
+
+    .skill {
+        grid-area: skill;
+        background-color: #ddd;
+        width: 100%;
+        height: 125px;
+    }
+
+    .job-2 {
+        grid-area: job2;
+    }
+
+    .job-3 {
+        grid-area: job3;
+    }
+
+    .job {
+        background: lightern($primary-color, 5);
+        padding: 3rem;
+        border-top: $second-color 2px solid;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
 }

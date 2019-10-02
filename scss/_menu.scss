@@ -16,7 +16,7 @@
         width: 28px;
         height: 2px;
         margin: 0 0 5px 0;
-        background: #fff;
+        background: set-text-color($primary-color);
         @include easeInOut;
     }
 
@@ -52,7 +52,7 @@
     position: absolute;
     top: 0;
     width: 100%;
-    opacity: 0.95;
+    opacity: 0.99;
     visibility: hidden;
     z-index: -2;
 
@@ -91,12 +91,13 @@
         background: $primary-color;
 
         .portrait {
-            width: 240px;
-            height: 240px;
-            background: url(/img/portrait-small.jpg);
+            width: 420px;
+            height: 420px;
+            background: url(/img/portrait-medium.jpg);
             border-radius: 50%;
             background-position: top;
             border: 2px solid $second-color;
+            background-position: right -47px top -20px;
         }
     }
 
@@ -110,16 +111,18 @@
         }
 
         &.current>a {
-            @include text3d(adjust-color(#eb3349, $lightness: -12%),
+            @include text3d(adjust-color(set-text-color($primary-color), $lightness: -12%),
                 $depth: 2,
                 $primaryshadowcolour: adjust-color(#ddd, $lightness: -80%, $saturation: +0%));
-            color: #f45c43;
+            color: set-text-color($primary-color);
+            ;
         }
 
         .nav-link {
             font-family: 'Questrial', sans-serif;
             display: inline-block;
             position: relative;
+            color: set-text-color($primary-color);
             font-size: 2rem;
             text-transform: uppercase;
             padding: 1rem 0;

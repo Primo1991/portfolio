@@ -1,0 +1,131 @@
+// Widescreens 
+
+@include mediaXL {
+    main {
+
+
+        .icons {
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: flex-end;
+
+        }
+    }
+}
+
+// Desctops & Laptops
+
+@include mediaLr {
+    main {
+        align-items: center;
+        text-align: center;
+
+        .icons {
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: flex-end;
+
+        }
+    }
+
+    .menu-branding {
+        .portrait {
+            width: 220px;
+            height: 220px;
+            background: url(/img/portrait-mobile.jpg);
+            background-position: right -8px top -10px;
+        }
+    }
+}
+
+// Tablets & small Laptops
+
+@include mediaMd {
+
+    main {
+        align-items: center;
+        text-align: center;
+
+        h1.lg-heading {
+            letter-spacing: 4px;
+            font-size: 5rem;
+        }
+
+        h2.sm-heading {
+            letter-spacing: 2px;
+            font-size: 4rem;
+        }
+
+        .icons {
+            font-size: 1.5rem;
+            justify-content: space-around;
+
+        }
+    }
+
+    .menu-nav,
+    div.menu-branding {
+        float: none;
+        width: 100%;
+        min-height: 0;
+    }
+
+    &.show {
+        transform: translate3d(0, 0, 0)
+    }
+
+    .menu-nav {
+        height: 65vh;
+        transform: translate3d(-100%, 0, 0);
+        font-size: 1.7rem;
+    }
+
+    .menu-branding {
+        height: 25vh;
+
+        transform: translate3d(100%, 0, 0);
+
+        .portrait {
+            width: 160px;
+            height: 160px;
+            background: url(/img/portrait-mobile.jpg);
+            background-position: right -33px top 0px;
+        }
+    }
+}
+
+// Smartphones
+
+@include mediaSm {
+    main {
+        align-items: center;
+        text-align: center;
+
+        h1.lg-heading {
+            letter-spacing: 4px;
+            font-size: 3.5rem;
+        }
+
+        h2.sm-heading {
+            letter-spacing: 3px;
+            font-size: 2.6rem;
+        }
+
+        .icons {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            left: 0;
+            font-size: 1rem;
+        }
+    }
+
+    .menu-branding {
+        .portrait {
+            width: 120px;
+            height: 120px;
+            background: url(/img/portrait-mobile.jpg);
+            background-position: right -48px top -5px;
+        }
+    }
+}
