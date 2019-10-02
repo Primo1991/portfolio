@@ -60,25 +60,28 @@ main {
     position: relative;
 
     .icons {
+        max-height: 10vh;
+        height: 10vh;
         display: flex;
         justify-content: flex-end;
         position: absolute;
-
         bottom: 0px;
         right: 0px;
         @include linear-gradient(#f45c43, #eb3349);
-        padding: 1.5rem 0;
         width: 100%;
         box-shadow: -12px 10px black;
 
+
         a {
+            margin-top: 10px;
             color: #eeeeee;
-            margin: 0 2em;
+            margin: auto 2em;
             font-size: 0.8em;
             @include text3d(adjust-color($primary-shadow-color, $lightness: -62%),
                 $depth: 1,
                 $primaryshadowcolour: adjust-color(#fff, $lightness: -80%, $saturation: +70%));
             @include easeInOut();
+
 
             &:hover {
                 @include text3d(adjust-color($primary-shadow-color, $lightness: -22%),
@@ -112,6 +115,6 @@ main {
     top: -3px;
     left: 0px;
     background-color: #000;
-    z-index: -1;
+    z-index: -2;
     filter: blur(5px);
 }
