@@ -10,6 +10,44 @@ font-family: 'Teko', sans-serif;
 font-family: 'Righteous',
 cursive;
 */
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  -webkit-transition: all ease-in-out 200ms;
+  transition: all ease-in-out 200ms;
+}
+
+.menu-btn .btn-line {
+  width: 28px;
+  height: 2px;
+  margin: 0 0 5px 0;
+  background: #fff;
+  -webkit-transition: all ease-in-out 200ms;
+  transition: all ease-in-out 200ms;
+}
+
+.menu-btn.close {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.menu-btn.close .btn-line:nth-child(1) {
+  -webkit-transform: rotate(45deg) translate(5px, 5px);
+          transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.close .btn-line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.close .btn-line:nth-child(3) {
+  -webkit-transform: rotate(-45deg) translate(5px, -5px);
+          transform: rotate(-45deg) translate(5px, -5px);
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -57,7 +95,7 @@ h2.lg-heading,
 h3.lg-heading {
   font-family: 'Righteous', cursive;
   letter-spacing: 4px;
-  font-size: 6em;
+  font-size: 7em;
   text-shadow: 0 1px 0 #b2b7c2, 0 2px 0 #acb2bd, 0 3px 0 #a6adb9, 0 4px 0 #a1a7b4, 0 5px 0 #9ba2b0, 0 6px 0 #959dab, 0 7px 0 #9097a7, 0 8px 0 #8a92a2, 0 0 6px rgba(73, 113, 144, 0.05), 0 -1px 3px rgba(73, 113, 144, 0.2), 0 9px 9px rgba(73, 113, 144, 0.5), 0 12px 12px rgba(73, 113, 144, 0.5), 0 15px 15px rgba(73, 113, 144, 0.5);
 }
 
@@ -66,7 +104,7 @@ h2.sm-heading,
 h3.sm-heading {
   font-family: 'Teko', sans-serif;
   letter-spacing: 3px;
-  font-size: 3em;
+  font-size: 4em;
   padding: 0.2rem 0rem;
   text-shadow: 0 1px 0 #b8bdc6, 0 2px 0 #b2b7c2, 0 3px 0 #acb2bd, 0 4px 0 #a6adb9, 0 5px 0 #a1a7b4, 0 6px 0 #9ba2b0, 0 0 6px rgba(83, 112, 134, 0.05), 0 -1px 3px rgba(83, 112, 134, 0.2), 0 9px 9px rgba(83, 112, 134, 0.5), 0 12px 12px rgba(83, 112, 134, 0.5), 0 15px 15px rgba(83, 112, 134, 0.5);
 }
@@ -98,7 +136,9 @@ main .icons {
   position: absolute;
   bottom: 0px;
   right: 0px;
-  background-color: red;
+  background: #eb3349;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f45c43), to(#eb3349));
+  background: linear-gradient(#f45c43, #eb3349);
   padding: 1.5rem 0;
   width: 100%;
   -webkit-box-shadow: -12px 10px black;
@@ -126,10 +166,16 @@ main .icons a:last-child {
 
 main#home {
   overflow: hidden;
-}
-
-main#home h1 {
-  margin-top: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .icons::after {
