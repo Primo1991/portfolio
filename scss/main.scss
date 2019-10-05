@@ -152,7 +152,6 @@ main {
         grid-area: skill;
         background-color: #ddd;
         width: 100%;
-        height: 125px;
     }
 
     .job-2 {
@@ -165,10 +164,56 @@ main {
 
     .job {
         background: lightern($primary-color, 5);
-        padding: 3rem;
         border-top: $second-color 2px solid;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     }
+}
+
+
+// Work Page 
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+
+    img {
+        width: 100%;
+        background-color: #fff;
+        border: 5px solid #ff4d00;
+
+        &:hover {
+            opacity: 0.8;
+            border: 5px solid $second-color;
+            transition: all 200ms ease-in-out;
+        }
+    }
+}
+
+//buttonStyles
+
+.btn {
+    display: block;
+    padding: 0.5rem 1rem;
+    border: none;
+    margin-bottom: 0.3rem;
+
+    &:hover {
+        background: $second-color;
+        color: set-text-color($second-color);
+    }
+}
+
+.btn-dark {
+    @extend .btn;
+    background: darken($primary-color, 50);
+    color: #fff;
+}
+
+.btn-light {
+    @extend .btn;
+    background: lighten($primary-color, 50);
+    color: #fff;
 }
 
 @import 'responsivnes';

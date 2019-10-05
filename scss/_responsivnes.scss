@@ -9,11 +9,21 @@
         justify-content: flex-end;
 
     }
+
+    .job {
+        padding: 3rem;
+    }
 }
+
+.projects {
+    grid-template-columns: repeat(4, 1fr);
+}
+
 
 // Desctops & Laptops
 
 @include mediaLr {
+
     main {
         align-items: center;
         text-align: center;
@@ -37,15 +47,28 @@
             background-position: right -8px top -10px;
         }
     }
+
+    .projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
 }
 
 // Tablets & small Laptops
 
 @include mediaMd {
+    .menu-btn {
+        @include linear-gradient(#aaa, #ddd);
+        border: 1px solid #fff;
+        padding: 7px 5px 5px 5px;
+        right: 20px;
+        top: 30px;
+    }
 
     main {
         align-items: center;
         text-align: center;
+        padding: 50px;
         min-height: calc(100vh - 10vh);
 
         h1.lg-heading {
@@ -64,6 +87,14 @@
     .icons {
         font-size: 1.5rem;
         justify-content: space-around;
+        transition: all 1s ease-in-out;
+        top: 100%;
+
+        &.showvs2 {
+            position: fixed;
+            top: calc(100% - 10%);
+            transition: all 400ms ease-in;
+        }
 
     }
 
@@ -98,6 +129,9 @@
     }
 
     .about-info {
+        text-align: justify;
+        padding: 30px 20px;
+        margin: 50px 0px;
         grid-template-areas:
             'bioimage'
             'bio'
@@ -107,15 +141,40 @@
             'job3';
         grid-template-columns: 1fr;
     }
+
+    .bio,
+    .skill,
+    .job {
+        padding: 30px;
+        letter-spacing: 1px;
+    }
+
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
 
 // Smartphones
 
 @include mediaSm {
     main {
+        // background-color: red;
+        text-align: justify;
+        padding: 20px 30px;
         align-items: center;
         text-align: center;
         min-height: calc(100vh - 10vh);
+
+
+
+        h1.lg-about {
+            margin-top: 10px;
+        }
+
+        h2.sm-about {
+            margin-bottom: 10px;
+        }
 
         h1.lg-heading {
             letter-spacing: 4px;
@@ -129,6 +188,8 @@
 
 
     }
+
+
 
     .icons {
         flex-direction: row;
@@ -146,4 +207,41 @@
             background-position: right -48px top -5px;
         }
     }
+
+    #home {
+        h1.lg-about {
+            font-size: 2.8rem;
+            margin-top: 40px;
+            margin-bottom: 5px;
+            padding: 10px 25px;
+            background-color: $second-color;
+        }
+
+        h2.sm-about {
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+        }
+
+    }
+
+    .about-info {
+        .bio-image {
+            margin-bottom: 0px;
+        }
+
+        .bio {
+            background-color: grey;
+
+            h3 {
+                font-size: 1.6em;
+            }
+        }
+
+    }
+
+    .projects {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
 }
