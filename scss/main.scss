@@ -1,18 +1,16 @@
 @import 'config';
 @import 'menu';
-@import 'responsivnes';
+
 
 * {
     box-sizing: border-box;
 }
 
 body {
-
     @include linear-gradient($primary-color, $second-color);
     @include background;
     color: set-text-color($primary-color);
     margin: 0;
-    height: 100vh;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -56,47 +54,8 @@ header {
 }
 
 main {
-    padding: 6rem;
-    height: 100%;
     position: relative;
-
-    .icons {
-        max-height: 10vh;
-        height: 10vh;
-        display: flex;
-        position: absolute;
-        bottom: 0px;
-        right: 0px;
-        left: 0px;
-        @include linear-gradient(#f45c43, #eb3349);
-        width: 100vw;
-        box-shadow: -12px 10px black;
-
-
-        a {
-            margin-top: 10px;
-            color: #eeeeee;
-            margin: auto 2em;
-            font-size: 0.8em;
-            @include text3d(adjust-color($primary-shadow-color, $lightness: -62%),
-                $depth: 1,
-                $primaryshadowcolour: adjust-color(#fff, $lightness: -80%, $saturation: +70%));
-            @include easeInOut();
-
-
-            &:hover {
-                @include text3d(adjust-color($primary-shadow-color, $lightness: -22%),
-                    $depth: 2,
-                    $primaryshadowcolour: adjust-color(#fff, $lightness: -30%, $saturation: +0%));
-                transform: scale(1.2);
-            }
-        }
-
-        a:last-child {
-            margin-right: 3rem;
-        }
-
-    }
+    min-height: calc(100vh - 10vh);
 
     &#home {
         overflow: hidden;
@@ -107,23 +66,46 @@ main {
     }
 }
 
+.icons {
+    min-height: 10vh;
+    display: flex;
+    justify-content: flex-end;
+    @include linear-gradient(#f45c43, #eb3349);
+    width: 100vw;
+    padding: 12px;
+    box-shadow: -12px 10px black;
 
-.icons::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: -3px;
-    left: 0px;
-    background-color: #000;
-    z-index: -2;
-    filter: blur(5px);
+
+    a {
+        margin-top: 10px;
+        color: #eeeeee;
+        margin: auto 2em;
+        font-size: 0.8em;
+        @include text3d(adjust-color($primary-shadow-color, $lightness: -62%),
+            $depth: 1,
+            $primaryshadowcolour: adjust-color(#fff, $lightness: -80%, $saturation: +70%));
+        @include easeInOut();
+
+
+        &:hover {
+            @include text3d(adjust-color($primary-shadow-color, $lightness: -22%),
+                $depth: 2,
+                $primaryshadowcolour: adjust-color(#fff, $lightness: -30%, $saturation: +0%));
+            transform: scale(1.2);
+        }
+    }
+
+    a:last-child {
+        margin-right: 3rem;
+    }
+
 }
 
 //About Page 
 main {
     font-family: $font-about-page;
     padding: 50px 150px;
+    min-height: calc(100vh - 10vh);
 
     .lg-about {
         font-size: 2.8rem;
@@ -140,9 +122,8 @@ main {
 
 .about-info {
     display: grid;
-    grid-gap: 30px;
-    grid-template-areas:
-        'bioimage bio bio'
+    grid-gap: 40px;
+    grid-template-areas: 'bioimage bio bio'
         'bioimage skill skill'
         'job1 job2 job3';
     grid-template-columns: repeat(3, 1fr);
@@ -189,3 +170,5 @@ main {
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     }
 }
+
+@import 'responsivnes';

@@ -1,15 +1,13 @@
 // Widescreens 
 
 @include mediaXL {
-    main {
+    main {}
 
+    .icons {
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: flex-end;
 
-        .icons {
-            font-size: 1.5rem;
-            display: flex;
-            justify-content: flex-end;
-
-        }
     }
 }
 
@@ -19,13 +17,16 @@
     main {
         align-items: center;
         text-align: center;
+        min-height: calc(100vh - 10vh);
 
-        .icons {
-            font-size: 1.1rem;
-            display: flex;
-            justify-content: flex-end;
 
-        }
+    }
+
+    .icons {
+        font-size: 1.1rem;
+        display: flex;
+        justify-content: flex-end;
+
     }
 
     .menu-branding {
@@ -45,6 +46,7 @@
     main {
         align-items: center;
         text-align: center;
+        min-height: calc(100vh - 10vh);
 
         h1.lg-heading {
             letter-spacing: 4px;
@@ -56,11 +58,13 @@
             font-size: 4rem;
         }
 
-        .icons {
-            font-size: 1.5rem;
-            justify-content: space-around;
 
-        }
+    }
+
+    .icons {
+        font-size: 1.5rem;
+        justify-content: space-around;
+
     }
 
     .menu-nav,
@@ -92,6 +96,17 @@
             background-position: right -33px top 0px;
         }
     }
+
+    .about-info {
+        grid-template-areas:
+            'bioimage'
+            'bio'
+            'skill'
+            'job1'
+            'job2'
+            'job3';
+        grid-template-columns: 1fr;
+    }
 }
 
 // Smartphones
@@ -100,6 +115,7 @@
     main {
         align-items: center;
         text-align: center;
+        min-height: calc(100vh - 10vh);
 
         h1.lg-heading {
             letter-spacing: 4px;
@@ -111,13 +127,15 @@
             font-size: 2.6rem;
         }
 
-        .icons {
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-around;
-            left: 0;
-            font-size: 1rem;
-        }
+
+    }
+
+    .icons {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        left: 0;
+        font-size: 1rem;
     }
 
     .menu-branding {
