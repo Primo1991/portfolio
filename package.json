@@ -31,6 +31,6 @@
   "author": "Przemyslaw Chmiel",
   "license": "MIT",
   "dependencies": {
-    "node-sass": "^4.12.0"
+    "node-sass": "^8.0.0"
   }
 }
